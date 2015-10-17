@@ -19,142 +19,46 @@ import com.ittc.ipkb.textParsingUtility.beans.TaxonomyBean;
 public class StringUtility
 {
 	//List of taxonomy names.
-	private static final String[] TAXONOMY_NAMES = {"Class","Subclass","Order","Suborder","Superfamily","Family","Subfamily"};
+	private static final String[] TAXONOMY_NAMES = {"Phylum","Subphylum","Class","Subclass","Order","Suborder","Superfamily","Family","Subfamily"};
 	private static List<String> taxanomyNames = Arrays.asList(TAXONOMY_NAMES);
 	
 	//List of all time periods.
-	private static final String[] TIME_PERIODS = {"Aalenian","Actonian","Aeronian","Aksayan","Albian","Alexandrian","Amgaian","Amgan","Anisian","Aptian","Aquitanian","Arenig","Artinskian","Ashgill","Asselian","Atdabanian",
-			"Atlantic",	"Ayusokkanian",	"Bajocian","Barremian","Bartonian","Bashkirian","Bathonian","Batyrbayan","Berriasian","Black River","Blancan","Boomerangian","Boreal","Botomian","Burdigalian","Calabrian","Callovian",
-			"Cambrian", "Campanian","Capitanian","Caradoc","Carboniferous","Carnian","Cassinian","Castleman","Cautleyan","Cayugan","Cenomanian","Cenozoic","Changhsingian","Changlangpuan","Changshanian","Chattian","Chazy",
-			"chrons","Cisuralian","Coniacian","Costonian","Cretaceous","Danian","Dapingian","Darriwilian","Datsonian","Delamaran","Deming","Devonian","Dolgellian","Dyeran","Early Cambrian","Early Cretaceous","Early Devonian",
-			"Early Jurassic","Early Mississippian","Early Ordovician","Early Pennsylvanian","Early Triassic","Eden","Eemian","Eifelian","Emsian","Eocene","Famennian","Fengshanian","Ffestiniogian","Floian","Florian","Franconian",
-			"Frasnian","Furongian","Gaconadian","Gamach","Gelasian","Givetian","Gorstian","Guadalupian","Gzhelian","Harnagian","Hauterivian","Hettangian","Hirnantian","Holocene","Homerian","Ibexian","Idamean","Induan","Ionian",
-			"Iverian","Jefferson","Jurassic","Kasimovian","Kazanian","Kimmeridgian","Kirkfield","Kungurian","Ladinian","Langhian","Late Cambrian","Late Cretaceous","Late Devonian","Late Jurassic","Late Mississippian","Late Ordovician",
-			"Late Pennsylvanian","Late Triassic","Lenian","Llandeilo","Llandovery","Llanvirn","Lochkovian","Lockportian","Longvillian","Longwangmioan","Lopingian","Lower Cambrian","Lower Cretaceous","Lower Devonian","Lower Jurassic",
-			"Lower Mississippian","Lower Ordovician","Lower Pennsylvanian","Lower Triassic","Ludfordian","Ludlow","Lutetian","Maastrichtian","Maentwrogian","Maozhangian",
-			"Marjuman",
-			"Marshbrookian",
-			"Mayaian",
-			"Mayan",
-			"Maysville",
-			"Meishuchuan",
-			"Mesozoic",
-			"Messinian",
-			"Middle Cambrian",
-			"Middle Devonian",
-			"Middle Jurassic",
-			"Middle Mississippian",
-			"Middle Ordovician",
-			"Middle Pennsylvanian",
-			"Middle Triassic",
-			"Mindyallan",
-			"Miocene",
-			"Mississippian",
-			"Montezuman",
-			"Moscovian",
-			"Neogene",
-			"Norian",
-			"Olenekian",
-			"Oligocene",
-			"Onnian",
-			"Ontarian",
-			"Ordian",
-			"Ordovician",
-			"Oxfordian",
-			"Paibian",
-			"Paleocene",
-			"Paleogene",
-			"Paleozoic",
-			"Payntonian",
-			"Pennsylvanian",
-			"Permian",
-			"Phanerozoic",
-			"Piacenzian",
-			"Pleistocene",
-			"Pliensbachian",
-			"Pliocene",
-			"Pragian",
-			"Preboreal",
-			"Priabonian",
-			"Pridoli",
-			"Pusgillian",
-			"Quaternary",
-			"Qungzusian",
-			"Rawtheyan",
-			"Rhaetian",
-			"Rhuddanian",
-			"Richmond",
-			"Roadian",
-			"Rockland",
-			"Rupelian",
-			"Sakian",
-			"Sakmarian",
-			"Sangamonian",
-			"Santonian",
-			"Selandian",
-			"Serpukhovian",
-			"Serravallian",
-			"Sheinwoodian",
-			"Sherman",
-			"Silurian",
-			"Sinemurian",
-			"Soundleyan",
-			"Stage",
-			"Steptoan",
-			"Subatlantic",
-			"Subboreal",
-			"Sunwaptan",
-			"Tarantian",
-			"Telychian",
-			"Templetonian",
-			"Thanetian",
-			"Tithonian",
-			"Toarcian",
-			"Tommotian",
-			"Tonawandan",
-			"Tortonian",
-			"Tournaisian",
-			"Toyonian",
-			"Tremadoc",
-			"Trempealeauan",
-			"Trenton",
-			"Triassic",
-			"Turonian",
-			"Tyrrhenian",
-			"Ufimian",
-			"Undillian",
-			"Upper Cambrian",
-			"Upper Cretaceous",
-			"Upper Devonian",
-			"Upper Jurassic",
-			"Upper Mississippian",
-			"Upper Ordovician",
-			"Upper Pennsylvanian",
-			"Upper Triassic",
-			"Valanginian",
-			"Vis¨¦an",
-			"Waucoban",
-			"Wenlock",
-			"Whiterock",
-			"Wordian",
-			"Wuchiapingian",
-			"Ypresian",
-			"Zanclean",
-			"Zhungxian",
-			"Zuzhuangian"
+	private static final String[] TIME_PERIODS = 
+		{
+			"Aalenian","Actonian","Aeronian","Aksayan","Albian","Alexandrian","Amgaian","Amgan","Anisian","Aptian","Aquitanian","Arenig","Artinskian","Ashgill","Asselian","Atdabanian","Atlantic",	"Ayusokkanian",
+			"Bajocian","Barremian","Bartonian","Bashkirian","Bathonian","Batyrbayan","Berriasian","Black River","Blancan","Boomerangian","Boreal","Botomian","Burdigalian",
+			"Calabrian","Callovian","Cambrian", "Campanian","Capitanian","Caradoc","Carboniferous","Carnian","Cassinian","Castleman","Cautleyan","Cayugan","Cenomanian","Cenozoic","Changhsingian","Changlangpuan","Changshanian","Chattian","Chazy","chrons","Cisuralian","Coniacian","Costonian","Cretaceous",
+			"Danian","Dapingian","Darriwilian","Datsonian","Delamaran","Deming","Devonian","Dolgellian","Dyeran","Eden","Eemian","Eifelian","Emsian","Eocene",
+			"Famennian","Fengshanian","Ffestiniogian","Floian","Florian","Franconian","Frasnian","Furongian","Gaconadian","Gamach","Gelasian","Givetian","Gorstian","Guadalupian","Gzhelian","Harnagian","Hauterivian","Hettangian","Hirnantian","Holocene","Homerian",
+			"Ibexian","Idamean","Induan","Ionian","Iverian","Jefferson","Jurassic","Kasimovian","Kazanian","Kimmeridgian","Kirkfield","Kungurian",
+			"Ladinian","Langhian","Lenian","Llandeilo","Llandovery","Llanvirn","Lochkovian","Lockportian","Longvillian","Longwangmioan","Lopingian","Ludfordian","Ludlow","Lutetian",
+			"Maastrichtian","Maentwrogian","Maozhangian","Marjuman","Marshbrookian","Mayaian","Mayan","Maysville","Meishuchuan","Mesozoic","Messinian","Mindyallan","Miocene","Mississippian","Montezuman","Moscovian",
+			"Neogene","Norian","Olenekian","Oligocene","Onnian","Ontarian","Ordian","Ordovician","Oxfordian",
+			"Paibian","Paleocene","Paleogene","Paleozoic","Payntonian","Pennsylvanian","Permian","Phanerozoic","Piacenzian","Pleistocene","Pliensbachian","Pliocene","Pragian","Preboreal","Priabonian","Pridoli","Pusgillian",
+			"Quaternary","Qungzusian","Rawtheyan","Rhaetian","Rhuddanian","Richmond","Roadian","Rockland","Rupelian",
+			"Sakian","Sakmarian","Sangamonian","Santonian","Selandian","Serpukhovian","Serravallian","Sheinwoodian","Sherman","Silurian","Sinemurian","Soundleyan","Stage","Steptoan","Subatlantic","Subboreal","Sunwaptan",
+			"Tarantian","Telychian","Templetonian","Thanetian","Tithonian","Toarcian","Tommotian","Tonawandan","Tortonian","Tournaisian","Toyonian","Tremadoc","Trempealeauan","Trenton","Triassic","Turonian","Tyrrhenian",
+			"Ufimian","Undillian","Valanginian","Vis¨¦an","Waucoban","Wenlock","Whiterock","Wordian","Wuchiapingian","Ypresian","Zanclean","Zhungxian","Zuzhuangian","Rec."
 	};
-	
 	private static List<String> timePeriods = Arrays.asList(TIME_PERIODS);
 	
+	//Reserved pronouns for time periods (eg: upper, lower, middle, early etc.,)
+	/*private static final String[] TIME_PERIOD_ADD_ON_WORDS= {"Early","Late","Lower","Middle","Upper"};
+	private static List<String> timePeriodAddOnWords = Arrays.asList(TIME_PERIOD_ADD_ON_WORDS);*/
 	
-	//Pattern to check if all the characters in a string are capital letters
-	private static Pattern capitalLettersPattern = Pattern.compile("[A-Z]*");
-	private static Pattern capitalLetterFollowedBySmallLetter =Pattern.compile("[A-Z][a-z]*");
-	private static Pattern allCapitalLettersFollowedByDotOrComma = Pattern.compile("[A-Z]*[.|,]");
-	//TODO: This needs to be modified to check for the pattern 1992b. as of now works only for 1992.
-	private static Pattern fourDigitNumber = Pattern.compile("\\d{4} *.");
 	
-	//Final results are populated into these data strucutres
+	///Pattern for checking taxonomy name : Should contain 1 or more capital letters and no other character. (Eg: CHOVANELLACEAE)
+	private static Pattern allCapitalLettersPattern = Pattern.compile("[A-Z]+");
+	//Pattern for checking the genus name : Should start with a capital letter and should contain one or more small letters only. (Eg: Ampullichara)
+	private static Pattern capitalLetterFollowedBySmallLetter =Pattern.compile("[A-Z][a-z]+");
+	//Pattern for checking author name : Can start with 0 or 1 special characters
+	//followed by All capital letters and may end with 0 or more special characters (Eg: CROFT or (CROFT) or C. or CROFT, )
+	private static Pattern allCapitalLettersFollowedByDotOrComma = Pattern.compile("[\\W]?[A-Z]+[\\W]*");
+	//Pattern for checking year number while looking for genus pattern : Should start with four digits (a year number) 
+	//and can have 0 or 1 alphabets and end with , (Eg: 1974, 1974b, etc.,)
+	private static Pattern fourDigitNumber =Pattern.compile("[0-9]{4}[a-z]?,+$");
+	
+	//Final results are populated into these data structures
 	public static Map<String,List<TaxonomyBean>> taxonomyDetailsMap = new HashMap<String,List<TaxonomyBean>>();
 	public static List<GeneraBean> generaList = new ArrayList<GeneraBean>();
 	
@@ -172,6 +76,8 @@ public class StringUtility
 	}
 	
 	//Default Taxonomy Names for a Genera.Will be updated while parsing the text
+	private static String currentPhylumName = "UNKNOWN";
+	private static String currentSubPhylumName = "UNKNOWN";
 	private static String currentClassName = "UNKNOWN";
 	private static String currentSubclassName = "UNKNOWN";
 	private static String currentOrderName = "UNKNOWN";
@@ -180,9 +86,90 @@ public class StringUtility
 	private static String currentFamilyName = "UNKNOWN";
 	private static String currentSubfamilyName = "UNKNOWN";
 	
-	//An indicator to indicate if the last taxonomy found is family or sub family in some cases.
-	//Used to indicate the starting position of genera information.
-	private static String lastTaxonomyTypeFound = "Phylum";
+	
+	/**
+	 * This method is the initial method that is called with the whole text or called ecery time for the remaining string
+	 * after obtaining certain useful info
+	 * 
+	 * This method looks for next occurring pattern that is whether genus comes first or taxonomy comes first in the remaining text
+	 * and calls appropriate method to get the relative info. 
+	 * Used to extract both taxonomy and genus information.
+	 * 
+	 * @param textString - the array of strings that has the remaining words that are yet to be parsed.
+	 */
+	public static void parseRemainingString(String[] remainingString)
+	{
+		//In the remaining string check if genus occurs first or taxonomy occurs first.
+	    //If genus comes first call parseRemainingStringForGeneraInfo to extract genus info
+		//else call parseRemainingStringForTaxonomyInfo to extract taxonomy info
+		int nextTaxonomyStartingPosition = getStartingIndexofTaxonomyInTheRemainingText(remainingString);
+	    int nextGeneraStartingPosition = getStartingIndexOfGeneraInTheRemainingText(remainingString);
+	    
+	    int nextPositionToParse = determineWhetherGeneraOrTaxonomyComesNext(nextGeneraStartingPosition,nextTaxonomyStartingPosition);
+	    if(nextPositionToParse!=-1)
+	    {
+	    	if(nextPositionToParse==nextGeneraStartingPosition)
+	    		parseRemainingStringForGeneraInfo(remainingString);
+	    	else if(nextPositionToParse==nextTaxonomyStartingPosition)
+	    		parseRemainingStringForTaxonomyInfo(remainingString);
+	    }
+	}
+	
+	/**
+	 * returns the index position in the string array where a taxonomy description starts
+	 * @param splittedWords
+	 * @return integer : index of the taxonomy details starting position, -1 if the taxonomy is not found in the input string
+	 */
+	private static int getStartingIndexofTaxonomyInTheRemainingText(String[] splittedWords) 
+	{
+		for(int wordCount=0;wordCount<splittedWords.length;wordCount++)
+		{
+			//if the word is a taxonomy word and is followed by a String of all capital letters then it is a taxonomy. Eg: Class CHAROPHYCEAE
+			if(taxanomyNames.contains(splittedWords[wordCount]) && allCapitalLettersPattern.matcher(splittedWords[wordCount+1]).matches())
+			{
+				return wordCount;
+			}
+		}
+		return -1;
+	}
+	
+	/**
+	 * This method checks the regular patterns identified for the genera information.
+	 * Steps include check for a String that starts with a capital letter followed by a set of samll letters
+	 * and then check for a string that have all caiptal letters and may end with . or , and then find for the year number among the near by strings and after year number followed by p.
+	 * @param splittedString
+	 * @return the position in the string array from where the genera info starts, return -1 if no taxonomies are found.
+	 */
+	private static int getStartingIndexOfGeneraInTheRemainingText(String[] splittedString)
+	{
+		int wordIndex = 0;
+		
+		while(wordIndex<splittedString.length)
+		{
+			//Look for this pattern as example: Moellerina ULRICH, 1886, p.
+			//If a word has a capital letter followed by all small letters, it can be a genus name based on next words.
+			if(capitalLetterFollowedBySmallLetter.matcher(splittedString[wordIndex]).matches() && !taxanomyNames.contains(splittedString[wordIndex]))
+			{
+				//And if the next word is a word with all the capital letters and ended by a , or . eg: ULRICH, or YANG & ZHOU,
+				int tempWordIndex = wordIndex+1; 
+				while(allCapitalLettersFollowedByDotOrComma.matcher(splittedString[tempWordIndex]).matches() || splittedString[tempWordIndex].equals("&"))
+				{
+					tempWordIndex++;
+				}
+				//And the followed by a year number and followed by a string "p." eg: 1886, p.
+				if(fourDigitNumber.matcher(splittedString[tempWordIndex]).matches() && splittedString[tempWordIndex+1].equals("p."))
+				{
+					return wordIndex;
+				}
+				
+			}
+			wordIndex++;		
+		}
+		
+		return -1;
+	}
+	
+	
 	
 	/**
 	 * This method first parses the input array of strings for taxonomy information and after finding the 
@@ -193,73 +180,43 @@ public class StringUtility
 	 * 
 	 * @param textString - the array of strings that has the remaining words that are yet to be parsed.
 	 */
-	public static void parseRemainingString(String[] splittedWords)
+	public static void parseRemainingStringForTaxonomyInfo(String[] splittedWords)
 	{
 		
 		//get the index position the string array that has a taxonomy word.
-		int taxonomyStartingPosition = getTheStartingIndexofTaxonomy(splittedWords);
+		int taxonomyStartingPosition = getStartingIndexofTaxonomyInTheRemainingText(splittedWords);
 		
 		//If the starting position is -1, no more taxanomies are found in the remaining text.
 		if(taxonomyStartingPosition!=-1)
 		{
-			//If last found taxonomy is family, then look for next taxonomy and if the next taxonomy is sub family go ahead 
-			// and parse the sub family taxonomy information else look for the genera information, until another high level taxa 
-			// is found.
-			if(lastTaxonomyTypeFound.equals("Family"))//TODO: Update this logic to check if last taxonomy name and current taxonomy name are different.	
-			{
-				String currentTaxonomyTypeFound = splittedWords[taxonomyStartingPosition];
-				if(currentTaxonomyTypeFound.equals("Subfamily"))
-				{
-					//Ignore the text before the taxonomy information and build an array that starts with taxonomy info till the end of the remaing text
-					String[] remainingString = new String[splittedWords.length-taxonomyStartingPosition];
-					for(int i=taxonomyStartingPosition,j=0;i<splittedWords.length;i++,j++)
-						remainingString[j]=splittedWords[i];
-					extractTaxonomyInfo(remainingString);
-				}
-				else
-					parseTextForGeneraInfo(splittedWords);
-			}
-			//If last found taxonomy is sub family, look for the genera information until next taxonomy keyword is found.
-			else if(lastTaxonomyTypeFound.equals("Subfamily"))
-			{
-				parseTextForGeneraInfo(splittedWords);
-			}
-			//Look only for higher taxonomy information until the family or sub family taxas are found.
-			else
-			{
-				//Ignore the text before the taxonomy information and build an array that starts with taxonomy info till the end of the remaing text
-				String[] remainingString = new String[splittedWords.length-taxonomyStartingPosition];
-				for(int i=taxonomyStartingPosition,j=0;i<splittedWords.length;i++,j++)
-					remainingString[j]=splittedWords[i];
-				extractTaxonomyInfo(remainingString);
-			}
-		}
-		//check if there exists any genera information in the remaining text.
-		else
-		{
-			parseTextForGeneraInfo(splittedWords);
+			//Ignore the text before the taxonomy information and build an array that starts with taxonomy info till the end of the remaing text
+			String[] remainingString = new String[splittedWords.length-taxonomyStartingPosition];
+			for(int i=taxonomyStartingPosition,j=0;i<splittedWords.length;i++,j++)
+				remainingString[j]=splittedWords[i];
+			extractTaxonomyInfo(remainingString);
 		}
 	}
 
 
-	/**
-	 * returns the index position in the string array where a taxonomy description starts
-	 * @param splittedWords
-	 * @return int : index of the taxonomy details starting position, -1 if the taxonomy is not found in the inout string
+	
+	
+	/***
+	 * This method parses the given array of strings and extracts the genera information.
+	 * @param splittedString
 	 */
-	private static int getTheStartingIndexofTaxonomy(String[] splittedWords) 
+	private static void parseRemainingStringForGeneraInfo(String[] splittedString)
 	{
-		for(int wordCount=0;wordCount<splittedWords.length;wordCount++)
+		int generaStartingPosition = getStartingIndexOfGeneraInTheRemainingText(splittedString);
+		
+		if(generaStartingPosition!=-1)
 		{
-			//if the word is a taxonomy word and is followed by a String of all capital letters then it is a taxonomy. Eg: Class CHAROPHYCEAE
-			if(taxanomyNames.contains(splittedWords[wordCount]) && capitalLettersPattern.matcher(splittedWords[wordCount+1]).matches())
-			{
-				return wordCount;
-			}
+			String[] remainingString = new String[splittedString.length-generaStartingPosition];
+			for(int i=generaStartingPosition,j=0;i<splittedString.length;i++,j++)
+				remainingString[j]=splittedString[i];
+			extractGeneraInfo(remainingString);
 		}
-		return -1;
 	}
-
+	
 
 	/**
 	 * Contains logic to extract the taxonomy information.
@@ -298,12 +255,13 @@ public class StringUtility
 			wordCount++;
 		}
 		hyperLinkInfo.append(splittedString[wordCount]+" ");
-		taxonomy.setHyperLinkInfo(hyperLinkInfo.toString());
+		taxonomy.setReferenceInfo(hyperLinkInfo.toString());
 		wordCount++;
 		
-		//extract the description.
+		//extract the description and time period
 		StringBuilder description = new StringBuilder("");
-		while(!timePeriods.contains(splittedString[wordCount]))
+		StringBuilder timePeriod = new StringBuilder("");
+		while(!checkIfWordContainsTimePeriod(splittedString[wordCount]))
 		{
 			description.append(splittedString[wordCount]+" ");
 			wordCount++;
@@ -312,7 +270,6 @@ public class StringUtility
 		
 		//extract the time period info
 		//TODO: this section needs to be modified to give appropriate pattern to end text.
-		StringBuilder timePeriod = new StringBuilder("");
 		while(!splittedString[wordCount].endsWith("."))
 		{
 			timePeriod.append(splittedString[wordCount]+" ");
@@ -321,94 +278,36 @@ public class StringUtility
 		timePeriod.append(splittedString[wordCount]);
 		taxonomy.setTimePeriod(timePeriod.toString());
 		wordCount++;
-		/*System.out.println("Taxonomy Type:"+taxonomy.getTaxonomyType()+", Name:"+taxonomy.getTaxonomyName()+", Author Info:"
-		+taxonomy.getAuthorInfo()+",  Hyperlink Info:"+taxonomy.getHyperLinkInfo()+", Description:"+taxonomy.getDescription()+",  Time Period:"+taxonomy.getTimePeriod());*/
 		
-		//set the taxonomy into the final map.
-		taxonomyDetailsMap.get(taxonomy.getTaxonomyType()).add(taxonomy);
+		//Write the taxonomy details extracted to the corresponding XML file
+		FileUtility.writeTaxonomyInformationToXML(taxonomy);
 		
-		//parse the remaining string
+		//build the remaining string
 		String[] remainingString = new String[splittedString.length-wordCount];
 		for(int i=wordCount,j=0;i<splittedString.length;i++,j++)
 			remainingString[j] = splittedString[i];
 		
-			
-		//update the last taxonomy type found to the latest taxonomy type parsed and continue the process of parsing for the remaining string
-	    lastTaxonomyTypeFound = taxonomy.getTaxonomyType();
-		//call this method to parse the remaining String
-	    parseRemainingString(remainingString);
+		//after extracting one taxonomy info call parseRemainingString to parse the remaining text
+		parseRemainingString(remainingString);
+	    
 	}
 	
-	/***
-	 * This method parses the given array of strings and extracts the genera information.
-	 * @param splittedString
-	 */
-	private static void parseTextForGeneraInfo(String[] splittedString)
-	{
-		int generaStartingPosition = getStartingIndexOfGenera(splittedString);
-		System.out.println("Genera FOund at::"+generaStartingPosition);
-		
-		if(generaStartingPosition!=-1)
-		{
-			String[] remainingString = new String[splittedString.length-generaStartingPosition];
-			for(int i=generaStartingPosition,j=0;i<splittedString.length;i++,j++)
-				remainingString[j]=splittedString[i];
-			extractGeneraInfo(remainingString);
-		}
-		
-	}
-	
-
-	/**
-	 * This method checks the regular patterns identified for the genera information.
-	 * Steps include check for a String that starts with a capital letter followed by a set of samll letters
-	 * and then check for a string that have all caiptal letters and may end with . or , and then find for the year number among the near by strings and after year number followed by p.
-	 * @param splittedString
-	 * @return the position in the string array from where the genera info starts, return -1 if no taxonomies are found.
-	 */
-	private static int getStartingIndexOfGenera(String[] splittedString)
-	{
-		int wordIndex = 0;
-		
-		while(wordIndex<splittedString.length)
-		{
-			//Look for this pattern as example: Moellerina ULRICH, 1886, p.
-			//If a word has a capital letter followed by all small letters
-			if(capitalLetterFollowedBySmallLetter.matcher(splittedString[wordIndex]).matches())
-			{
-				//And if the next word is a word with all the capital letters and ended by a , or . eg: ULRICH, or YANG & ZHOU,
-				if(capitalLettersPattern.matcher(splittedString[wordIndex+1]).matches() || allCapitalLettersFollowedByDotOrComma.matcher(splittedString[wordIndex+1]).matches())
-				{
-					//There can be multiple author names before the year starts, estimating the number of author names would be a max of 10 before year ifno starts
-					for(int i=wordIndex+1;i<wordIndex+10;i++)
-					{
-						//And the followed by a year number and followed by a string "p." eg: 1886, p.
-						if(fourDigitNumber.matcher(splittedString[i]).matches() && splittedString[i+1].equals("p."))
-						{
-							return wordIndex;
-						}
-					}
-				}
-			}
-			wordIndex++;		
-		}
-		
-		return -1;
-	}
 	
 	
 	/**
-	 * Contains logic to extract the Genera information
-	 * @param string : Array of Strings that starts with the genera name until the end of the string
+	 * Contains logic to extract the Genus information
+	 * @param string : Array of Strings that starts with the genus name until the end of the string
 	 */
 	private static void extractGeneraInfo(String[] splittedString) 
 	{
 		GeneraBean genera = new GeneraBean();
 		
-		//have to set the name, higher taxa names, author info, hyperlink info, description, time period and figure index by parsing the text word by word.
+		//have to set the name, higher taxonomy names, author info, hyper link info, description, time period and figure index by parsing the text word by word.
 		
-		//set the name and higher taxa names
+		//set the name and higher taxonomy names
 		genera.setGeneraName(splittedString[0]);
+		genera.setPhylumName(currentPhylumName);
+		genera.setSubPhylumName(currentSubPhylumName);
 		genera.setClassName(currentClassName);
 		genera.setSubClassName(currentSubclassName);
 		genera.setOrderName(currentOrderName);
@@ -421,7 +320,7 @@ public class StringUtility
 		//extract the author info. the strings that are listed until "[" char is found is the author info 
 		//eg: Z. WANG, 1984, p. 55 [*G. sinensis Z. WANG, 1984, p. 55, pl. I,1–7; OD]. - Author info is  Z. WANG, 1984, p. 55 
 		StringBuilder authorInfo = new StringBuilder("");
-		int wordCount=2;
+		int wordCount=1;
 		while(!splittedString[wordCount].startsWith("["))
 		{
 			authorInfo.append(splittedString[wordCount]+" ");
@@ -437,12 +336,12 @@ public class StringUtility
 			wordCount++;
 		}
 		hyperLinkInfo.append(splittedString[wordCount]+" ");
-		genera.setHyperLinkInfo(hyperLinkInfo.toString());
+		genera.setReferenceInfo(hyperLinkInfo.toString());
 		wordCount++;
 		
 		//extract the description.
 		StringBuilder description = new StringBuilder("");
-		while(!timePeriods.contains(splittedString[wordCount]))
+		while(!checkIfWordContainsTimePeriod(splittedString[wordCount]))
 		{
 			description.append(splittedString[wordCount]+" ");
 			wordCount++;
@@ -451,26 +350,29 @@ public class StringUtility
 		
 		//extract the time period info
 		StringBuilder timePeriod = new StringBuilder("");
-		while(!splittedString[wordCount].contains("——"))
+		while(!splittedString[wordCount].contains("FIG."))
 		{
 			timePeriod.append(splittedString[wordCount]+" ");
 			wordCount++;
 		}
-		String[] timePeriodFigureSplitter = splittedString[wordCount].split("——");
-		timePeriod.append(timePeriodFigureSplitter[0]);
+		String[] timePeriodFigureSplitter = splittedString[wordCount].split("FIG.");
+		if(timePeriodFigureSplitter!=null && timePeriodFigureSplitter.length>0)
+			timePeriod.append(timePeriodFigureSplitter[0]);
 		genera.setTimePeriod(timePeriod.toString());
 		wordCount++;
 		
 		//extract the figure indexes
-		//TODO: have to write logic to extract figure index.
-		StringBuilder figureIndexes = new StringBuilder(timePeriodFigureSplitter[1]+" ");
+		StringBuilder figureIndexes = new StringBuilder("FIG. ");
+		if(timePeriodFigureSplitter!=null && timePeriodFigureSplitter.length>1)
+			figureIndexes.append(timePeriodFigureSplitter[1]+" ");
+		String figureIndex = retrieveFigureIndex(splittedString,wordCount);
+		figureIndexes.append(figureIndex);
+		genera.setFigureIndex(figureIndexes.toString());
 		
-		System.out.println("Genera Name:"+genera.getGeneraName()+"Class name:"+genera.getClassName()+"Sub CLass Name::"+genera.getSubClassName()
-		+"order name:"+genera.getOrderName()+"sub order name:"+genera.getSubOrderName()+"Super family:"+genera.getSuperFamilyName()+
-		"Sub Family name:"+genera.getSubFamilyName()+"Author:"+genera.getAuthorInfo()+"HyperLink info:"+genera.getHyperLinkInfo()+
-		"Description:"+genera.getDescription()+"time period:"+genera.getTimePeriod());
+		//write the extracted genus info to the XML file
+		FileUtility.writeGeneraInformationToXML(genera);
 		
-		//set the taxonomy into the final map.
+		//set the taxonomy into the final genus list.
 		generaList.add(genera);
 		
 		//parse the remaining string
@@ -478,9 +380,8 @@ public class StringUtility
 		for(int i=wordCount,j=0;i<splittedString.length;i++,j++)
 			remainingString[j] = splittedString[i];
 		
-		//call this method to parse the remaining String
-	    parseRemainingString(remainingString);
-		
+		//after extracting one taxonomy info call parseRemainingString to parse the remaining text
+		parseRemainingString(remainingString);
 	}
 
 
@@ -493,6 +394,10 @@ public class StringUtility
 	{
 		switch(taxonomyType)
 		{
+			case "Phylum": currentPhylumName = taxonomyName;
+			break;
+			case "Subphylym": currentSubPhylumName = taxonomyName;
+			break;
 			case "Class": currentClassName = taxonomyName;
 			break;
 			case "Subclass": currentSubclassName = taxonomyName;
@@ -508,5 +413,72 @@ public class StringUtility
 			case "Subfamily": currentSubfamilyName = taxonomyName;
 			break;
 		}	
+	}
+	
+	/**
+	 * This method checks if a given word has any reserved time period name in it.
+	 * @param word
+	 * @return boolean : true if time period name exists else false.
+	 */
+	private static boolean checkIfWordContainsTimePeriod(String word)
+	{
+		boolean timePeriodFound = false;
+		for(String str : timePeriods)
+		{
+			if(word.contains(str))
+			{
+				timePeriodFound = true;
+				break;
+			}
+		}
+		return timePeriodFound;
+	}
+	
+	/**
+	 * 
+	 * method to determine which section i.e genus or taxonomy section comes first in the remaining text.
+	 * @param int,int starting indexes of genus and taxonomy in the remaining text
+	 * @return int which is the best position to start parsing for useful info.
+	 */
+	private static int determineWhetherGeneraOrTaxonomyComesNext(int generaStartingIndex, int taxonomyStartingIndex)
+	{
+		
+		if(generaStartingIndex ==-1 && taxonomyStartingIndex ==-1)
+			return -1;
+		else if(generaStartingIndex==-1 && taxonomyStartingIndex !=-1)
+			return taxonomyStartingIndex;
+		else if(generaStartingIndex!=-1 && taxonomyStartingIndex ==-1)
+			return generaStartingIndex;
+		else
+		{
+			if(generaStartingIndex<taxonomyStartingIndex)
+				return generaStartingIndex;
+			else
+				return taxonomyStartingIndex;
+		}
+	}
+	
+	/**
+	 * Logic to extract the figure index. Gets the text from starting position till next genus or taxonomy is found.
+	 * @param splittedString
+	 * @param startingIndex
+	 * @return String : figure index
+	 */
+	private static String retrieveFigureIndex(String[] splittedString, int startingIndex)
+	{
+		StringBuilder figureIndex = new StringBuilder();
+		
+		//parse the remaining string
+		String[] remainingString = new String[splittedString.length-startingIndex];
+		for(int i=startingIndex,j=0;i<splittedString.length;i++,j++)
+			remainingString[j] = splittedString[i];
+		//parse until next genus or higher taxonomy are found and that text will be figure index.
+		int nextGeneraStartingPosition = getStartingIndexOfGeneraInTheRemainingText(remainingString);
+		int nextTaxonomyStartingPosition = getStartingIndexofTaxonomyInTheRemainingText(remainingString);
+		int nextPositionToParse = determineWhetherGeneraOrTaxonomyComesNext(nextGeneraStartingPosition,nextTaxonomyStartingPosition);
+		for(int i=0;i<nextPositionToParse;i++)
+			figureIndex.append( remainingString[i]+" ");
+
+		return figureIndex.toString();
 	}
 }

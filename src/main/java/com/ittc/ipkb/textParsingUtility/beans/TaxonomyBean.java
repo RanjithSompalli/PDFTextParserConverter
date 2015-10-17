@@ -11,7 +11,7 @@ public class TaxonomyBean
 	private String taxonomyType;
 	private String taxonomyName;
 	private String authorInfo;
-	private String hyperLinkInfo;
+	private String referenceInfo;
 	private String description;
 	private String timePeriod;
 	
@@ -33,11 +33,11 @@ public class TaxonomyBean
 	public void setAuthorInfo(String authorInfo) {
 		this.authorInfo = authorInfo;
 	}
-	public String getHyperLinkInfo() {
-		return hyperLinkInfo;
+	public String getReferenceInfo() {
+		return referenceInfo;
 	}
-	public void setHyperLinkInfo(String hyperLinkInfo) {
-		this.hyperLinkInfo = hyperLinkInfo;
+	public void setReferenceInfo(String referenceInfo) {
+		this.referenceInfo = referenceInfo;
 	}
 	public String getDescription() {
 		return description;

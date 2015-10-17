@@ -10,6 +10,8 @@ package com.ittc.ipkb.textParsingUtility.beans;
 public class GeneraBean 
 {
 	private String generaName;
+	private String phylumName;
+	private String subPhylumName;
 	private String className;
 	private String subClassName;
 	private String orderName;
@@ -18,7 +20,7 @@ public class GeneraBean
 	private String familyName;
 	private String subFamilyName;
 	private String authorInfo;
-	private String hyperLinkInfo;
+	private String referenceInfo;
 	private String description;
 	private String timePeriod;
 	private String figureIndex;
@@ -28,6 +30,18 @@ public class GeneraBean
 	}
 	public void setGeneraName(String generaName) {
 		this.generaName = generaName;
+	}
+	public String getPhylumName() {
+		return phylumName;
+	}
+	public void setPhylumName(String phylumName) {
+		this.phylumName = phylumName;
+	}
+	public String getSubPhylumName() {
+		return subPhylumName;
+	}
+	public void setSubPhylumName(String subPhylumName) {
+		this.subPhylumName = subPhylumName;
 	}
 	public String getClassName() {
 		return className;
@@ -77,11 +91,11 @@ public class GeneraBean
 	public void setAuthorInfo(String authorInfo) {
 		this.authorInfo = authorInfo;
 	}
-	public String getHyperLinkInfo() {
-		return hyperLinkInfo;
+	public String getReferenceInfo() {
+		return referenceInfo;
 	}
-	public void setHyperLinkInfo(String hyperLinkInfo) {
-		this.hyperLinkInfo = hyperLinkInfo;
+	public void setReferenceInfo(String referenceInfo) {
+		this.referenceInfo = referenceInfo;
 	}
 	public String getDescription() {
 		return description;
